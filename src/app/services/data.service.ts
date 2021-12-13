@@ -15,7 +15,7 @@ export class DataService {
 
   getProducts(): Observable<IProduct[]> {
     return this.http.get<IOrder[]>('/assets/db.json')
-      .pipe(map((order: IOrder[]) => order.map(item => item.Products).flat()), tap(console.log));
+      .pipe(map((order: IOrder[]) => order.map(item => item.Products).flat()));
   }
 
 }
